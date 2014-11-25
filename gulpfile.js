@@ -75,6 +75,16 @@ gulp.task('vendors', function() {
 });
 
 /**
+ * Compile TWIG example pages
+ */
+
+gulp.task('twig', function () {
+    return gulp.src('assets/pages/*.twig')
+        .pipe($.twig())
+        .pipe(gulp.dest('styleguide/pages'));
+});
+
+/**
  * Build styles from SCSS files
  * With error reporting on compiling (so that there's no crash)
  */
@@ -125,7 +135,7 @@ gulp.task('clean', del.bind(null, ['build', 'styleguide']));
 /**
  * Serve
  */
-gulp.task('serve', ['styles', 'scripts'], function () {
+gulp.task('serve', ['styles', 'scripts', 'twig'], function () {
   browserSync({
     server: {
       baseDir: ['styleguide'],
@@ -138,6 +148,11 @@ gulp.task('serve', ['styles', 'scripts'], function () {
   });
   gulp.watch(['assets/js/**/*.js'], function() {
     runSequence('scripts', reload);
+  });
+  gulp.watch(['assets/pages/**/*'], function() {
+    // clean folder before compiling
+    del.bind(null, ['styleguide/pages'])
+    runSequence('twig', reload);
   });
 });
 
@@ -162,6 +177,6 @@ gulp.task('production',['clean'], function() {
  * Default task
  */
 gulp.task('default', ['clean'], function(cb) {
-  runSequence('vendors', 'styles', 'scripts', 'styleguide', cb);
+  runSequence('vendors', 'styles', 'scripts', 'twig', 'styleguide', cb);
 });
 
