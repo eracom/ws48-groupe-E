@@ -85,6 +85,19 @@ gulp.task('twig', function () {
 });
 
 /**
+ * Copy images
+ */
+gulp.task('img', function() {
+    /**
+   * IMAGES SOURCES
+   */
+  gulp.src([
+      'assets/img/**/*'
+    ])
+    .pipe(gulp.dest('build/img'));
+});
+
+/**
  * Build styles from SCSS files
  * With error reporting on compiling (so that there's no crash)
  */
@@ -142,6 +155,9 @@ gulp.task('serve', ['styles', 'scripts', 'twig'], function () {
     },
     open: false
   });
+  gulp.watch(['assets/img/**/*'], function() {
+    runSequence('img', 'styleguide', reload);
+  });
   gulp.watch(['styleguide/*.html'], reload);
   gulp.watch(['assets/sass/**/*.scss'], function() {
     runSequence('styles', 'styleguide', reload);
@@ -177,6 +193,6 @@ gulp.task('production',['clean'], function() {
  * Default task
  */
 gulp.task('default', ['clean'], function(cb) {
-  runSequence('vendors', 'styles', 'scripts', 'twig', 'styleguide', cb);
+  runSequence('vendors', 'styles', 'scripts', 'img', 'twig', 'styleguide', cb);
 });
 
