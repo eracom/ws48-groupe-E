@@ -8,15 +8,39 @@ category: Layout - Typography
 ---
 
 ```html_example
-<h1>My title level 1</h1>
-<h2>My title level 2</h2>
-<h3>My title level 3</h3>
-<h4>My title level 4</h4>
-<h5>My title level 5</h5>
-<h6>My title level 6</h6>
+<h1 class="primary">My title level 1</h1>
+<h2 class="primary">My title level 2</h2>
+<h3 class="primary">My title level 3</h3>
+<h4 class="primary">My title level 4</h4>
+
+
+<h1 class="warning">My title level 1</h1>
+<h2 class="warning">My title level 2</h2>
+<h3 class="warning">My title level 3</h3>
+<h4 class="warning">My title level 4</h4>
+
+<h1 class="white">My title level 1</h1>
+<h2 class="white">My title level 2</h2>
+<h3 class="white">My title level 3</h3>
+<h4 class="white">My title level 4</h4>
+
 ```
 */
 
+.primary {
+  
+  color: #0099ff;
+} 
+
+.white {
+  color: #ffffff;
+
+}
+
+.warning {
+  
+  color: #ff8448;
+}
 
 
 /*doc
