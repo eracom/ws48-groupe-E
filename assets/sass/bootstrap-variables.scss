@@ -741,7 +741,7 @@ $panel-danger-heading-bg:     $state-danger-bg !default;
 //** Padding around the thumbnail image
 $thumbnail-padding:           0px !default;
 //** Thumbnail background color
-$thumbnail-bg:                #FF8448 !default;
+$thumbnail-bg:                $body-bg !default;
 //** Thumbnail border color
 $thumbnail-border:            $body-bg !default;
 //** Thumbnail border radius
