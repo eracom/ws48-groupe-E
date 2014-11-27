@@ -98,9 +98,11 @@ category: Components - Thumbnails
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quid enim tanto opus est instrumento in optimis.</p>  
         </div>
              
+             
               <div class="hover-thumbnail">
                 <h3> Pour plus d'informations et faire un don </h3>
               </div>
+              
     </div>
   </div>
 
@@ -118,6 +120,8 @@ category: Components - Thumbnails
 .thumbnail {
       margin-bottom: 0px;
       position: relative;
+      border: none;
+
 }
 
 .hover-thumbnail h3 {
@@ -143,6 +147,11 @@ category: Components - Thumbnails
 
 .thumbnail:hover .hover-thumbnail {
 
-display: block;
+    display: block;
+
+}
+
+.thumbnail .caption {
+    color:#fff !important;
 
 }
