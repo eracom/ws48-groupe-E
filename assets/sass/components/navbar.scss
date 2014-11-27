@@ -24,7 +24,6 @@ category: Components - Navbar
     <!-- Collect the nav links -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link</a></li>
         <li><a href="#">Link</a></li>
         <li><a href="#">Link</a></li>
         <li><a href="#">Link</a></li>
@@ -35,8 +34,20 @@ category: Components - Navbar
 </nav>
 ```
 */
+.nav {
+ float: right;
+}
+.nav li{
+ transition: 0.8s;
+ margin-right: 50px;
+ font-weight: 700;
+ font-size: 20px;
 
+}
+.nav > li > a:hover{
+ transition: 0.8s;
 
+}
 
 /*doc
 ---
